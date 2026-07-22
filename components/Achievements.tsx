@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Trophy, Code, Award, TrendingUp } from "lucide-react";
-import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
+import { Code, Award, TrendingUp, Coffee } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const Achievements = () => {
   const ref = useRef(null);
@@ -12,21 +12,21 @@ const Achievements = () => {
 
   const achievements = [
     {
-      icon: Trophy,
-      title: "Hackathon Winner",
-      description: "Secured 3rd Position at DTU CryptoForge Hackathon (Team V-Sentinels) for building scalable decentralized systems",
-      color: "from-yellow-500 to-orange-500",
+      icon: Coffee,
+      title: "100+ DSA Problems in Java",
+      description: "Strong problem-solving foundation with over 100 Data Structures and Algorithms problems solved in Core Java",
+      color: "from-orange-500 to-yellow-500",
     },
     {
       icon: Code,
-      title: "100xDevs Cohort 3 Graduate",
-      description: "Skilled in Full-stack, DevOps, and Web3 technologies through intensive hands-on training",
-      color: "from-blue-500 to-cyan-500",
+      title: "ML Project Development",
+      description: "Built and deployed production-ready ML models with 86%+ accuracy on real-world datasets",
+      color: "from-cyan-500 to-blue-500",
     },
     {
       icon: Award,
-      title: "Problem Solving Excellence",
-      description: "60+ Java DSA problems solved, demonstrating strong algorithmic thinking and optimization skills",
+      title: "Academic Excellence",
+      description: "Maintaining 7.28 CGPA while specializing in AI Engineering and Data Science",
       color: "from-purple-500 to-pink-500",
     },
   ];
@@ -35,23 +35,18 @@ const Achievements = () => {
     {
       platform: "LeetCode",
       icon: SiLeetcode,
-      stats: "60+ Problems Solved",
+      stats: "100+ Problems Solved",
       link: "https://leetcode.com/u/NishchayVashishtha/",
       color: "#FFA116",
-    },
-    {
-      platform: "GeeksForGeeks",
-      icon: SiGeeksforgeeks,
-      stats: "Active Problem Solver",
-      link: "https://www.geeksforgeeks.org/profile/nishchayvashbeju",
-      color: "#2F8D46",
+      description: "Core Java • DSA"
     },
     {
       platform: "GitHub",
       icon: TrendingUp,
-      stats: "Open Source Contributor",
+      stats: "Active Contributor",
       link: "https://github.com/NishchayVashishtha",
       color: "#3b82f6",
+      description: "Python • ML Projects"
     },
   ];
 
@@ -67,7 +62,7 @@ const Achievements = () => {
             Achievements & <span className="gradient-text">Recognition</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Milestones and accomplishments in my development journey
+            Milestones in AI, Data Science, and Problem Solving
           </p>
 
           {/* Main Achievements */}
@@ -80,7 +75,7 @@ const Achievements = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all h-full">
+                <div className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-cyan-500/50 transition-all h-full">
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${achievement.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                     <achievement.icon className="w-8 h-8 text-white" />
                   </div>
@@ -98,9 +93,9 @@ const Achievements = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className="text-2xl font-bold text-center mb-8">
-              <span className="gradient-text">Coding Profiles</span>
+              <span className="gradient-text">Coding & Development Profiles</span>
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
               {codingStats.map((platform, index) => (
                 <motion.a
                   key={platform.platform}
@@ -110,18 +105,21 @@ const Achievements = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                  className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all group cursor-pointer"
+                  className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-cyan-500/50 transition-all group cursor-pointer"
                   whileHover={{ y: -5 }}
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <platform.icon 
-                      className="w-10 h-10 group-hover:scale-110 transition-transform" 
+                      className="w-12 h-12 group-hover:scale-110 transition-transform" 
                       style={{ color: platform.color }}
                     />
-                    <h4 className="text-xl font-bold">{platform.platform}</h4>
+                    <div>
+                      <h4 className="text-xl font-bold">{platform.platform}</h4>
+                      <p className="text-sm text-gray-500">{platform.description}</p>
+                    </div>
                   </div>
-                  <p className="text-gray-400">{platform.stats}</p>
-                  <div className="mt-4 text-blue-400 text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                  <p className="text-gray-400 text-lg font-semibold">{platform.stats}</p>
+                  <div className="mt-4 text-cyan-400 text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                     View Profile
                     <span>→</span>
                   </div>
@@ -130,24 +128,24 @@ const Achievements = () => {
             </div>
           </motion.div>
 
-          {/* GitHub Stats Placeholder */}
+          {/* GitHub Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12 p-8 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700"
+            className="p-8 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700"
           >
             <h3 className="text-2xl font-bold text-center mb-6">
               <span className="gradient-text">GitHub Contributions</span>
             </h3>
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-6">
               <img
-                src="https://github-readme-stats.vercel.app/api?username=NishchayVashishtha&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117"
+                src="https://github-readme-stats.vercel.app/api?username=NishchayVashishtha&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=06b6d4&icon_color=06b6d4&text_color=c9d1d9"
                 alt="GitHub Stats"
                 className="rounded-lg w-full max-w-md"
               />
               <img
-                src="https://github-readme-streak-stats.herokuapp.com/?user=NishchayVashishtha&theme=radical&hide_border=true&background=0d1117"
+                src="https://github-readme-streak-stats.herokuapp.com/?user=NishchayVashishtha&theme=radical&hide_border=true&background=0d1117&ring=06b6d4&fire=06b6d4&currStreakLabel=06b6d4"
                 alt="GitHub Streak"
                 className="rounded-lg w-full max-w-md"
               />

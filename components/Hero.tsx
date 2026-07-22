@@ -1,16 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Code2, ArrowDown } from "lucide-react";
-import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
+import { Github, Linkedin, Mail, Brain, ArrowDown } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com/NishchayVashishtha", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/nishchayvashishtha/", label: "LinkedIn" },
     { icon: SiLeetcode, href: "https://leetcode.com/u/NishchayVashishtha/", label: "LeetCode" },
-    { icon: SiGeeksforgeeks, href: "https://www.geeksforgeeks.org/profile/nishchayvashbeju", label: "GeeksForGeeks" },
-    { icon: Mail, href: "mailto:nishchayvashishtha@outlook.com", label: "Email" },
+    { icon: Mail, href: "mailto:nishchayvashishtha0505@gmail.com", label: "Email" },
   ];
 
   return (
@@ -19,6 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -top-48 -left-48 animate-float"></div>
         <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -bottom-48 -right-48 animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float" style={{ animationDelay: "2s" }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -30,7 +30,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="mb-4"
           >
-            <span className="text-blue-400 text-lg font-mono">Hi, my name is</span>
+            <span className="text-blue-400 text-lg font-mono">Hi, I'm</span>
           </motion.div>
 
           {/* Name */}
@@ -48,9 +48,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-4xl text-gray-400 mb-6"
+            className="text-2xl md:text-4xl text-gray-400 mb-6 flex items-center justify-center gap-3"
           >
-            Full-Stack Developer & AI Engineer
+            <Brain className="w-8 h-8 md:w-10 md:h-10 text-cyan-400" />
+            AI Engineer & Data Science Specialist
           </motion.h2>
 
           {/* Description */}
@@ -58,11 +59,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto mb-8"
+            className="text-gray-400 text-lg max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            B.Tech CSE student at BMU specializing in building intelligent, scalable web applications 
-            with React, Node.js, and AI/ML technologies. Passionate about product engineering and 
-            creating impactful solutions.
+            B.Tech CSE student specializing in <span className="text-cyan-400 font-semibold">Artificial Intelligence</span>, 
+            <span className="text-blue-400 font-semibold"> Data Science</span>, and 
+            <span className="text-purple-400 font-semibold"> Python Development</span>. 
+            Building intelligent ML solutions with a strong foundation in problem-solving (100+ DSA problems in Java).
           </motion.p>
 
           {/* CTA Buttons */}
@@ -74,16 +76,16 @@ const Hero = () => {
           >
             <motion.a
               href="#projects"
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors flex items-center gap-2"
+              className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg font-medium transition-all flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Code2 size={20} />
-              View My Work
+              <Brain size={20} />
+              View ML Projects
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-8 py-3 border border-blue-600 hover:bg-blue-600/10 rounded-lg font-medium transition-colors"
+              className="px-8 py-3 border border-cyan-500 hover:bg-cyan-500/10 rounded-lg font-medium transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -104,7 +106,7 @@ const Hero = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
                 whileHover={{ y: -5 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

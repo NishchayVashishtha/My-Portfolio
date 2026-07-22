@@ -2,21 +2,34 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { SiGithub, SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
+import { useRef, useState, FormEvent } from "react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { SiGithub, SiLeetcode } from "react-icons/si";
 import { Linkedin } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
+    type: null,
+    message: ''
+  });
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "nishchayvashishtha@outlook.com",
-      href: "mailto:nishchayvashishtha@outlook.com",
+      value: "nishchayvashishtha0505@gmail.com",
+      href: "mailto:nishchayvashishtha0505@gmail.com",
     },
     {
       icon: Phone,
@@ -51,13 +64,58 @@ const Contact = () => {
       href: "https://leetcode.com/u/NishchayVashishtha/",
       color: "#FFA116",
     },
-    {
-      icon: SiGeeksforgeeks,
-      label: "GeeksForGeeks",
-      href: "https://www.geeksforgeeks.org/profile/nishchayvashbeju",
-      color: "#2F8D46",
-    },
   ];
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    if (!formState.name || !formState.email || !formState.message) {
+      setStatus({ type: 'error', message: 'Please fill in all fields' });
+      return;
+    }
+
+    setSending(true);
+    setStatus({ type: null, message: '' });
+
+    try {
+      // EmailJS configuration
+      const serviceID = 'service_xa1jacr';
+      const templateID = 'template_6gxtgy3';
+      const publicKey = 'MJX4YQ83mfFpYb1ox';
+
+      const templateParams = {
+        from_name: formState.name,
+        from_email: formState.email,
+        message: formState.message,
+        to_name: 'Nishchay Vashishtha',
+      };
+
+      // FIX 1: Pass publicKey inside an options object
+      await emailjs.send(serviceID, templateID, templateParams, {
+        publicKey: publicKey,
+      });
+
+      setStatus({ 
+        type: 'success', 
+        message: 'Message sent successfully! I\'ll get back to you soon.' 
+      });
+      setFormState({ name: '', email: '', message: '' });
+      
+      setTimeout(() => {
+        setStatus({ type: null, message: '' });
+      }, 5000);
+
+    } catch (error: any) {
+      // FIX 2: Log error.text to see the actual EmailJS server response
+      console.error('EmailJS Error:', error.text || error.message || error);
+      setStatus({ 
+        type: 'error', 
+        message: 'Failed to send message. Please try emailing directly.' 
+      });
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-20 bg-black" ref={ref}>
@@ -71,7 +129,7 @@ const Contact = () => {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            Let's discuss AI/ML projects, Data Science opportunities, or collaboration ideas
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -90,11 +148,11 @@ const Contact = () => {
                     initial={{ opacity: 0, x: -30 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-4 p-4 rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all group"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-cyan-500/50 transition-all group"
                     whileHover={{ x: 5 }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center group-hover:bg-blue-600/30 transition-colors">
-                      <info.icon className="w-6 h-6 text-blue-400" />
+                    <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center group-hover:bg-cyan-600/30 transition-colors">
+                      <info.icon className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">{info.label}</p>
@@ -116,7 +174,7 @@ const Contact = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-blue-500/50 flex items-center justify-center transition-all group"
+                    className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 hover:border-cyan-500/50 flex items-center justify-center transition-all group"
                     whileHover={{ y: -5, scale: 1.1 }}
                     aria-label={social.label}
                   >
@@ -135,7 +193,7 @@ const Contact = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <form className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
@@ -144,8 +202,11 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors"
+                    value={formState.name}
+                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-500 focus:outline-none transition-colors text-white"
                     placeholder="Your Name"
+                    required
                   />
                 </div>
                 <div>
@@ -156,8 +217,11 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors"
+                    value={formState.email}
+                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-500 focus:outline-none transition-colors text-white"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
                 <div>
@@ -168,18 +232,52 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+                    value={formState.message}
+                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-cyan-500 focus:outline-none transition-colors resize-none text-white"
                     placeholder="Your message..."
+                    required
                   ></textarea>
                 </div>
+
+                {/* Status Message */}
+                {status.type && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-lg flex items-center gap-2 ${
+                      status.type === 'success' 
+                        ? 'bg-green-500/10 border border-green-500/30 text-green-400' 
+                        : 'bg-red-500/10 border border-red-500/30 text-red-400'
+                    }`}
+                  >
+                    {status.type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
+                    <span className="text-sm">{status.message}</span>
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
-                  className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={sending}
+                  className={`w-full px-6 py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
+                    sending 
+                      ? 'bg-gray-700 cursor-not-allowed' 
+                      : 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500'
+                  }`}
+                  whileHover={!sending ? { scale: 1.02 } : {}}
+                  whileTap={!sending ? { scale: 0.98 } : {}}
                 >
-                  <Send size={20} />
-                  Send Message
+                  {sending ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      Send Message
+                    </>
+                  )}
                 </motion.button>
               </form>
             </motion.div>

@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { 
-  SiJavascript, SiTypescript, SiPython, SiReact, SiNextdotjs, 
-  SiNodedotjs, SiExpress, SiTailwindcss, SiMongodb, SiPostgresql, 
-  SiGit, SiDocker, SiLinux, SiFigma, SiTensorflow, SiFlask 
+  SiPython, SiPandas, SiNumpy, SiScikitlearn, SiStreamlit,
+  SiMysql, SiJupyter, SiFastapi
 } from "react-icons/si";
-import { Coffee } from "lucide-react";
+import { Coffee, BarChart3, Database, LineChart, Zap } from "lucide-react";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -16,58 +15,52 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Languages",
+      title: "Data Science & Analytics",
       skills: [
-        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-        { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
         { name: "Python", icon: SiPython, color: "#3776AB" },
-        { name: "Java", icon: Coffee, color: "#007396" },
+        { name: "Pandas", icon: SiPandas, color: "#150458" },
+        { name: "NumPy", icon: SiNumpy, color: "#013243" },
+        { name: "Matplotlib", icon: LineChart, color: "#11557c" },
+        { name: "Seaborn", icon: BarChart3, color: "#4C9A9B" },
+        { name: "SQL", icon: SiMysql, color: "#4479A1" },
+        { name: "Power BI", icon: Zap, color: "#F2C811" },
+        { name: "Jupyter", icon: SiJupyter, color: "#F37726" },
       ],
     },
     {
-      title: "Frontend",
+      title: "Machine Learning",
       skills: [
-        { name: "React", icon: SiReact, color: "#61DAFB" },
-        { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+        { name: "Scikit-Learn", icon: SiScikitlearn, color: "#F7931E" },
+        { name: "EDA", icon: Database, color: "#06B6D4" },
+        { name: "Regression", icon: LineChart, color: "#8B5CF6" },
+        { name: "Statistics", icon: BarChart3, color: "#EC4899" },
       ],
     },
     {
-      title: "Backend",
+      title: "Backend & Frameworks",
       skills: [
-        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "Express", icon: SiExpress, color: "#000000" },
-        { name: "Flask", icon: SiFlask, color: "#000000" },
+        { name: "FastAPI", icon: SiFastapi, color: "#009688" },
+        { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
       ],
     },
     {
-      title: "Databases",
+      title: "Problem Solving",
       skills: [
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-      ],
-    },
-    {
-      title: "Tools & Technologies",
-      skills: [
-        { name: "Git", icon: SiGit, color: "#F05032" },
-        { name: "Docker", icon: SiDocker, color: "#2496ED" },
-        { name: "Linux", icon: SiLinux, color: "#FCC624" },
-        { name: "Figma", icon: SiFigma, color: "#F24E1E" },
-        { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
+        { name: "Core Java", icon: Coffee, color: "#007396" },
+        { name: "DSA (100+)", icon: Coffee, color: "#f89820" },
       ],
     },
   ];
 
   const concepts = [
-    "Data Structures & Algorithms",
-    "AI/ML & Deep Learning",
-    "Zero-Trust Architecture",
-    "Web3 & Blockchain",
-    "REST APIs",
-    "System Design (HLD/LLD)",
-    "Distributed Systems",
-    "Federated Learning",
+    "Exploratory Data Analysis (EDA)",
+    "Statistical Analysis",
+    "Supervised Learning",
+    "Unsupervised Learning",
+    "Logistic Regression",
+    "Data Visualization",
+    "Feature Engineering",
+    "Model Evaluation",
   ];
 
   return (
@@ -82,11 +75,11 @@ const Skills = () => {
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            Core competencies in AI, Data Science, and Python Development
           </p>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
@@ -95,8 +88,8 @@ const Skills = () => {
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700"
               >
-                <h3 className="text-xl font-bold mb-6 text-blue-400">{category.title}</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <h3 className="text-xl font-bold mb-6 text-cyan-400">{category.title}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
                       key={skill.name}
@@ -118,14 +111,14 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Concepts */}
+          {/* ML Concepts */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <h3 className="text-2xl font-bold text-center mb-8">
-              <span className="gradient-text">Core Concepts</span>
+              <span className="gradient-text">Core ML & Data Science Concepts</span>
             </h3>
             <div className="flex flex-wrap gap-3 justify-center">
               {concepts.map((concept, index) => (
@@ -134,7 +127,7 @@ const Skills = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 text-sm hover:border-blue-500 transition-all cursor-default"
+                  className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-600/20 to-blue-600/20 border border-cyan-500/30 text-sm hover:border-cyan-500 transition-all cursor-default"
                   whileHover={{ scale: 1.05 }}
                 >
                   {concept}

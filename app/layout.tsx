@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nishchay Vashishtha | Full-Stack Developer & AI Engineer",
-  description: "B.Tech CSE student specializing in Full-Stack Development, AI/ML, and Product Engineering. Building scalable web applications with React, Node.js, and modern technologies.",
-  keywords: ["Nishchay Vashishtha", "Full-Stack Developer", "AI Engineer", "React Developer", "Node.js", "Product Engineer", "BMU", "Software Engineer"],
-  authors: [{ name: "Nishchay Vashishtha" }],
+  title: "Nishchay Vashishtha | AI Engineer & Data Science Specialist",
+  description: "B.Tech CSE student specializing in AI Engineering, Data Science, and Python Development. Building intelligent ML solutions with Python, Scikit-Learn, and FastAPI.",
+  keywords: ["Nishchay Vashishtha", "AI Engineer", "Data Science", "Machine Learning", "Python Developer", "Data Analytics", "BMU", "AI Specialist"],
+  authors: [{ name: "Nishchay Vashishtha", email: "nishchayvashishtha0505@gmail.com" }],
   openGraph: {
-    title: "Nishchay Vashishtha | Full-Stack Developer & AI Engineer",
-    description: "Building intelligent, scalable web applications with modern technologies",
+    title: "Nishchay Vashishtha | AI Engineer & Data Science Specialist",
+    description: "Building intelligent AI/ML solutions with Python and Data Science",
     type: "website",
   },
 };

@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Achievements", href: "#achievements" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -52,7 +53,7 @@ const Navbar = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-cyan-400 transition-colors"
                 whileHover={{ y: -2 }}
               >
                 {item.name}
@@ -61,7 +62,7 @@ const Navbar = () => {
             <motion.a
               href="/resume.pdf"
               download
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+              className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-lg transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -91,7 +92,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-gray-300 hover:text-white transition-colors py-2"
+                className="block text-gray-300 hover:text-cyan-400 transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -100,7 +101,7 @@ const Navbar = () => {
             <a
               href="/resume.pdf"
               download
-              className="block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors text-center"
+              className="block px-4 py-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-lg transition-all text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Resume
