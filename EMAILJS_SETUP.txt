@@ -1,62 +1,59 @@
-AI ENGINEER PORTFOLIO - READY TO USE!
-======================================
+AI/ML ENGINEER PORTFOLIO - FINAL VERSION!
+==========================================
 
-Your AI/Data Science portfolio is 100% ready!
+✅ Portfolio Updated to Gen AI/LLM Focus!
 
-QUICK START:
------------
-1. npm run dev
-2. Open http://localhost:3000
-3. Test the contact form - it works! ✅
+RUNNING AT: http://localhost:3000
 
-✅ EMAIL FORM: Fully configured and working!
-   Your EmailJS credentials are set up.
-   Emails will be sent to: nishchayvashishtha0505@gmail.com
+MAJOR UPDATES:
+--------------
+✅ Profile: AI/ML Engineer (Gen AI & LLM Specialist)
+✅ DSA: 150+ problems (updated from 100+)
+✅ Focus: Generative AI, LLMs, RAG Systems
+✅ Skills: LangChain, Mistral AI, ChromaDB, FastAPI
+✅ Removed: All CGPA & percentages
+✅ 5 AI/ML Projects with GitHub + Live links
+✅ Email Form: Working (nishchayvashishtha0505@gmail.com)
+✅ Photo: Professional AI/ML Engineer badge
 
-✅ YOUR PHOTO: Added successfully (profile.jpeg)
-   Appears in About section with CGPA badge
+YOUR PROFILE NOW SHOWS:
+-----------------------
+• Title: AI/ML Engineer - Gen AI & LLM Specialist
+• Education: B.Tech CSE (4th Year) at BMU
+• Expertise: Generative AI, LLMs, RAG, Multi-Agent Systems
+• Skills: LangChain, Mistral AI, ChromaDB, FastAPI, TensorFlow
+• DSA: 150+ problems in Java
+• Projects: 5 deployed AI/ML projects
+• Training: Deep Learning, Transformers, MLOps
 
-✅ GITHUB REPOS: Added to both projects
-   - Heart Disease: github.com/NishchayVashishtha/Heart_Disease_Prediciton/
-   - Bank System: github.com/NishchayVashishtha/Bank-Management-Project
+PROJECTS INCLUDED:
+------------------
+1. AI Video Assistant (RAG + LLM + Whisper)
+2. Multi-Agent AI Research System (LangChain)
+3. Moodline Emotion Detection (BiGRU + TensorFlow)
+4. Heart Disease Prediction (ML + Streamlit)
+5. Bank Management System (Python)
 
-✅ CGPA: 7.33
-
-✅ EMAIL: nishchayvashishtha0505@gmail.com
-
-DEPLOY NOW:
------------
-1. Push to GitHub:
-   git add .
-   git commit -m "AI Engineer Portfolio - Complete"
-   git push
-
-2. Go to vercel.com
-3. Import your repo
-4. Click Deploy
-5. Live in 2 minutes! 🚀
-
-EVERYTHING IS READY:
+CHECK YOUR PORTFOLIO:
 --------------------
-✓ AI/Data Science focus (NO Web3/Blockchain/MERN)
-✓ Your professional photo
-✓ 2 ML Projects with GitHub links + live demos
-✓ 100+ DSA problems highlighted
-✓ GitHub + LeetCode stats integration
-✓ Real-time email contact form (WORKING!)
-✓ CGPA 7.33
-✓ All social links
-✓ Fully responsive
-✓ SEO optimized
-✓ Production-ready build
+Open: http://localhost:3000
 
-Your Complete Info:
-- Name: Nishchay Vashishtha
-- Email: nishchayvashishtha0505@gmail.com
-- Phone: +91 9084683907
-- GitHub, LinkedIn, LeetCode
-- Education: B.Tech CSE (4th Year) BMU
-- CGPA: 7.33
+SECTIONS TO REVIEW:
+-------------------
+• Hero: "AI/ML Engineer - Gen AI & LLM Specialist"
+• About: No CGPA, focus on Gen AI/LLMs/RAG
+• Skills: AI Technologies & Tools (LangChain, etc.)
+• Projects: All 5 with GitHub repos
+• Achievements: 150+ DSA, Hackathon winner
+• Contact: Working email form
 
-🎉 PORTFOLIO IS 100% COMPLETE!
-No setup needed. Just run and deploy! 🚀
+DEPLOY WHEN READY:
+------------------
+git add .
+git commit -m "AI/ML Engineer Portfolio - Gen AI Focused"
+git push
+
+Then deploy on vercel.com
+
+🎉 PORTFOLIO IS PRODUCTION-READY!
+Tailored for AI/ML Engineer roles! 🚀

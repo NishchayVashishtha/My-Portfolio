@@ -61,10 +61,10 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-400 text-lg max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            B.Tech CSE student specializing in <span className="text-cyan-400 font-semibold">Artificial Intelligence</span>, 
-            <span className="text-blue-400 font-semibold"> Data Science</span>, and 
-            <span className="text-purple-400 font-semibold"> Python Development</span>. 
-            Building intelligent ML solutions with a strong foundation in problem-solving (100+ DSA problems in Java).
+            B.Tech CSE (4th Year) at BMU specializing in <span className="text-cyan-400 font-semibold">Generative AI</span>, 
+            <span className="text-blue-400 font-semibold"> LLMs & RAG Systems</span>, and 
+            <span className="text-purple-400 font-semibold"> ML Engineering</span>. 
+            Expert in LangChain, FastAPI, and production AI applications with 150+ DSA problems solved in Java.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -81,7 +81,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Brain size={20} />
-              View ML Projects
+              View Projects
             </motion.a>
             <motion.a
               href="#contact"

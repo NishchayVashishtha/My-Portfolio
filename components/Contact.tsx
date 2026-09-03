@@ -129,7 +129,7 @@ const Contact = () => {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Let's discuss AI/ML projects, Data Science opportunities, or collaboration ideas
+            Let's discuss Gen AI projects, LLM applications, RAG systems, or AI/ML opportunities
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">

@@ -5,9 +5,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { 
   SiPython, SiPandas, SiNumpy, SiScikitlearn, SiStreamlit,
-  SiMysql, SiJupyter, SiFastapi
+  SiPostgresql, SiJupyter, SiFastapi, SiGit, SiTensorflow
 } from "react-icons/si";
-import { Coffee, BarChart3, Database, LineChart, Zap } from "lucide-react";
+import { Coffee, BarChart3, Database, LineChart, Zap, Brain, Code2 } from "lucide-react";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -15,52 +15,48 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Data Science & Analytics",
+      title: "AI Technologies & Tools",
       skills: [
-        { name: "Python", icon: SiPython, color: "#3776AB" },
-        { name: "Pandas", icon: SiPandas, color: "#150458" },
-        { name: "NumPy", icon: SiNumpy, color: "#013243" },
-        { name: "Matplotlib", icon: LineChart, color: "#11557c" },
-        { name: "Seaborn", icon: BarChart3, color: "#4C9A9B" },
-        { name: "SQL", icon: SiMysql, color: "#4479A1" },
-        { name: "Power BI", icon: Zap, color: "#F2C811" },
-        { name: "Jupyter", icon: SiJupyter, color: "#F37726" },
+        { name: "LangChain", icon: SiPython, color: "#3776AB" },
+        { name: "Mistral AI", icon: Brain, color: "#FF6B6B" },
+        { name: "ChromaDB", icon: Database, color: "#FF6B35" },
+        { name: "RAG", icon: Database, color: "#4ECDC4" },
+        { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
+        { name: "NLP", icon: LineChart, color: "#06B6D4" },
+        { name: "Whisper", icon: BarChart3, color: "#10B981" },
+        { name: "LLMs", icon: Brain, color: "#8B5CF6" },
       ],
     },
     {
-      title: "Machine Learning",
-      skills: [
-        { name: "Scikit-Learn", icon: SiScikitlearn, color: "#F7931E" },
-        { name: "EDA", icon: Database, color: "#06B6D4" },
-        { name: "Regression", icon: LineChart, color: "#8B5CF6" },
-        { name: "Statistics", icon: BarChart3, color: "#EC4899" },
-      ],
-    },
-    {
-      title: "Backend & Frameworks",
+      title: "Software Engineering",
       skills: [
         { name: "FastAPI", icon: SiFastapi, color: "#009688" },
+        { name: "REST APIs", icon: Zap, color: "#F59E0B" },
+        { name: "Git & GitHub", icon: SiGit, color: "#F05032" },
         { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
       ],
     },
     {
-      title: "Problem Solving",
+      title: "Languages & Fundamentals",
       skills: [
-        { name: "Core Java", icon: Coffee, color: "#007396" },
-        { name: "DSA (100+)", icon: Coffee, color: "#f89820" },
+        { name: "Python", icon: SiPython, color: "#3776AB" },
+        { name: "Java", icon: Coffee, color: "#007396" },
+        { name: "OOP", icon: Code2, color: "#06B6D4" },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "#4479A1" },
+        { name: "DSA", icon: Coffee, color: "#f89820" },
       ],
     },
   ];
 
   const concepts = [
-    "Exploratory Data Analysis (EDA)",
-    "Statistical Analysis",
-    "Supervised Learning",
-    "Unsupervised Learning",
-    "Logistic Regression",
-    "Data Visualization",
-    "Feature Engineering",
-    "Model Evaluation",
+    "Generative AI & LLMs",
+    "RAG (Retrieval Augmented Generation)",
+    "Multi-Agent AI Systems",
+    "Deep Learning (ANN, CNN, RNN)",
+    "Transformers & Attention Mechanism",
+    "Natural Language Processing",
+    "MLOps (Docker, Kubernetes)",
+    "Production ML Deployment",
   ];
 
   return (
@@ -75,7 +71,7 @@ const Skills = () => {
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Core competencies in AI, Data Science, and Python Development
+            Core competencies in Generative AI, LLMs, RAG Systems, and ML Engineering
           </p>
 
           {/* Skills Grid */}
@@ -118,7 +114,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <h3 className="text-2xl font-bold text-center mb-8">
-              <span className="gradient-text">Core ML & Data Science Concepts</span>
+              <span className="gradient-text">Core AI/ML Technologies</span>
             </h3>
             <div className="flex flex-wrap gap-3 justify-center">
               {concepts.map((concept, index) => (

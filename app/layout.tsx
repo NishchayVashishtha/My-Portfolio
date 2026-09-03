@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nishchay Vashishtha | AI Engineer & Data Science Specialist",
-  description: "B.Tech CSE student specializing in AI Engineering, Data Science, and Python Development. Building intelligent ML solutions with Python, Scikit-Learn, and FastAPI.",
-  keywords: ["Nishchay Vashishtha", "AI Engineer", "Data Science", "Machine Learning", "Python Developer", "Data Analytics", "BMU", "AI Specialist"],
+  title: "Nishchay Vashishtha | AI/ML Engineer - Gen AI & LLM Specialist",
+  description: "B.Tech CSE (4th Year) specializing in Generative AI, LLMs, RAG Systems, and ML Engineering. Expert in LangChain, FastAPI, TensorFlow with 150+ DSA problems solved.",
+  keywords: ["Nishchay Vashishtha", "AI Engineer", "ML Engineer", "Generative AI", "LLMs", "RAG Systems", "LangChain", "FastAPI", "BMU", "AI Specialist"],
   authors: [{ name: "Nishchay Vashishtha", email: "nishchayvashishtha0505@gmail.com" }],
   openGraph: {
-    title: "Nishchay Vashishtha | AI Engineer & Data Science Specialist",
-    description: "Building intelligent AI/ML solutions with Python and Data Science",
+    title: "Nishchay Vashishtha | AI/ML Engineer - Gen AI & LLM Specialist",
+    description: "Building production AI systems with LangChain, RAG, and LLMs",
     type: "website",
   },
 };

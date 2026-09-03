@@ -13,23 +13,23 @@ const About = () => {
   const highlights = [
     {
       icon: Brain,
-      title: "AI & ML Specialist",
-      description: "Building intelligent systems with Python, Scikit-Learn, and Statistical Analysis",
+      title: "Gen AI & LLM Expert",
+      description: "Building RAG systems, multi-agent workflows with LangChain, Mistral AI, and ChromaDB",
     },
     {
       icon: Database,
-      title: "Data Science Expert",
-      description: "Expert in EDA, data visualization with Pandas, NumPy, Matplotlib, and Power BI",
+      title: "ML Engineering",
+      description: "Production AI with FastAPI, TensorFlow, Deep Learning (ANN, CNN, RNN, Transformers)",
     },
     {
       icon: Code2,
       title: "Strong Problem Solver",
-      description: "100+ DSA problems solved in Java with strong algorithmic thinking",
+      description: "150+ DSA problems solved in Java with expertise in OOP and algorithms",
     },
     {
       icon: TrendingUp,
-      title: "Analytics Focused",
-      description: "Turning data into actionable insights with statistical modeling and ML",
+      title: "AI Application Builder",
+      description: "End-to-end AI systems from model training to deployment with Docker & MLOps",
     },
   ];
 
@@ -56,23 +56,23 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                I'm a <span className="text-cyan-400 font-semibold">4th year B.Tech Computer Science Engineering</span> student 
-                at <span className="text-cyan-400 font-semibold">BMU (BML Munjal University)</span>, specializing in 
-                <span className="text-blue-400 font-semibold"> AI Engineering</span>, 
-                <span className="text-purple-400 font-semibold"> Data Science</span>, and 
-                <span className="text-cyan-400 font-semibold"> Python Development</span>.
+                I'm a <span className="text-cyan-400 font-semibold">B.Tech Computer Science (4th Year)</span> student 
+                at <span className="text-cyan-400 font-semibold">BML Munjal University</span>, specializing in 
+                <span className="text-blue-400 font-semibold"> Generative AI</span>, 
+                <span className="text-purple-400 font-semibold"> Large Language Models (LLMs)</span>, and 
+                <span className="text-cyan-400 font-semibold"> ML Engineering</span>.
               </p>
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                My expertise lies in building <span className="text-cyan-400 font-semibold">end-to-end Machine Learning projects</span>, 
-                performing <span className="text-blue-400 font-semibold">Exploratory Data Analysis (EDA)</span>, and creating 
-                <span className="text-purple-400 font-semibold"> interactive data visualizations</span>. I've deployed production-ready 
-                ML applications using <span className="text-cyan-400 font-semibold">Streamlit</span> and 
-                <span className="text-blue-400 font-semibold"> FastAPI</span>.
+                My expertise includes building <span className="text-cyan-400 font-semibold">RAG-powered AI systems</span> with 
+                <span className="text-blue-400 font-semibold"> LangChain</span>, deploying 
+                <span className="text-purple-400 font-semibold"> production-ready APIs with FastAPI</span>, and implementing 
+                <span className="text-cyan-400 font-semibold"> multi-agent AI workflows</span>. Proficient in TensorFlow, 
+                ChromaDB, and NLP with hands-on experience in transformers and attention mechanisms.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
-                With a strong foundation in <span className="text-cyan-400 font-semibold">Data Structures & Algorithms</span> (100+ problems in Java), 
-                I combine analytical thinking with practical ML implementation to deliver impactful solutions in healthcare prediction, 
-                statistical modeling, and data-driven decision making.
+                With <span className="text-cyan-400 font-semibold">150+ DSA problems solved in Java</span>, I combine strong 
+                algorithmic thinking with cutting-edge AI/ML implementation. Completed comprehensive training in Deep Learning 
+                (ANN, CNN, RNN), Generative AI, and MLOps ecosystem (Git, Docker, Kubernetes).
               </p>
             </motion.div>
 
@@ -88,7 +88,7 @@ const About = () => {
                 <div className="aspect-square rounded-2xl overflow-hidden border-4 border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
                   <Image
                     src="/profile.jpeg"
-                    alt="Nishchay Vashishtha - AI Engineer"
+                    alt="Nishchay Vashishtha - AI/ML Engineer"
                     width={500}
                     height={500}
                     className="object-cover w-full h-full"
@@ -96,27 +96,27 @@ const About = () => {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-cyan-600 to-blue-600 text-white px-6 py-3 rounded-lg shadow-lg">
-                  <div className="text-2xl font-bold">7.33</div>
-                  <div className="text-xs">CGPA</div>
+                  <div className="text-2xl font-bold">AI/ML</div>
+                  <div className="text-xs">Engineer</div>
                 </div>
               </div>
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
                 <div className="p-4 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-cyan-500/30 text-center">
-                  <div className="text-3xl font-bold text-cyan-400">100+</div>
+                  <div className="text-3xl font-bold text-cyan-400">150+</div>
                   <div className="text-gray-400 text-sm">DSA Problems</div>
                   <div className="text-gray-500 text-xs mt-1">Java</div>
                 </div>
                 <div className="p-4 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-blue-500/30 text-center">
-                  <div className="text-3xl font-bold text-blue-400">2+</div>
-                  <div className="text-gray-400 text-sm">ML Projects</div>
+                  <div className="text-3xl font-bold text-blue-400">5+</div>
+                  <div className="text-gray-400 text-sm">AI Projects</div>
                   <div className="text-gray-500 text-xs mt-1">Deployed</div>
                 </div>
                 <div className="col-span-2 p-4 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-500/30 text-center">
-                  <div className="text-3xl font-bold text-purple-400">86.14%</div>
-                  <div className="text-gray-400 text-sm">ML Model Accuracy</div>
-                  <div className="text-gray-500 text-xs mt-1">Heart Disease Prediction</div>
+                  <div className="text-3xl font-bold text-purple-400">RAG + LLM</div>
+                  <div className="text-gray-400 text-sm">Specialized In</div>
+                  <div className="text-gray-500 text-xs mt-1">LangChain & Generative AI</div>
                 </div>
               </div>
             </motion.div>

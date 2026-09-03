@@ -13,20 +13,20 @@ const Achievements = () => {
   const achievements = [
     {
       icon: Coffee,
-      title: "100+ DSA Problems in Java",
-      description: "Strong problem-solving foundation with over 100 Data Structures and Algorithms problems solved in Core Java",
+      title: "150+ DSA Problems in Java",
+      description: "Strong problem-solving foundation with 150+ Data Structures and Algorithms problems solved in Core Java on LeetCode",
       color: "from-orange-500 to-yellow-500",
     },
     {
       icon: Code,
-      title: "ML Project Development",
-      description: "Built and deployed production-ready ML models with 86%+ accuracy on real-world datasets",
+      title: "Generative AI Expert",
+      description: "Built production RAG systems, multi-agent AI workflows with LangChain, and deployed LLM-powered applications",
       color: "from-cyan-500 to-blue-500",
     },
     {
       icon: Award,
-      title: "Academic Excellence",
-      description: "Maintaining 7.28 CGPA while specializing in AI Engineering and Data Science",
+      title: "Hackathon Winner",
+      description: "3rd place at DTU CryptoForge Hackathon - developed AlgoCred, an enterprise-grade verifiable credentials dApp",
       color: "from-purple-500 to-pink-500",
     },
   ];
@@ -35,7 +35,7 @@ const Achievements = () => {
     {
       platform: "LeetCode",
       icon: SiLeetcode,
-      stats: "100+ Problems Solved",
+      stats: "150+ Problems Solved",
       link: "https://leetcode.com/u/NishchayVashishtha/",
       color: "#FFA116",
       description: "Core Java • DSA"
@@ -43,10 +43,10 @@ const Achievements = () => {
     {
       platform: "GitHub",
       icon: TrendingUp,
-      stats: "Active Contributor",
+      stats: "Active AI/ML Contributor",
       link: "https://github.com/NishchayVashishtha",
       color: "#3b82f6",
-      description: "Python • ML Projects"
+      description: "Python • LangChain • RAG"
     },
   ];
 
@@ -62,7 +62,7 @@ const Achievements = () => {
             Achievements & <span className="gradient-text">Recognition</span>
           </h2>
           <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Milestones in AI, Data Science, and Problem Solving
+            Milestones in Generative AI, ML Engineering, and Problem Solving
           </p>
 
           {/* Main Achievements */}
